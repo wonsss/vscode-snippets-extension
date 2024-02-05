@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "Code snippets for React with typescript, emotion, storybook, and testing-library",
 	"displayName": "react-snippets-marco",
-	"publisher": "Marco",
+	"publisher": "Marco Jang",
 	"icon": "images/logo.png",
 	"galleryBanner": {
 		"theme": "light"
