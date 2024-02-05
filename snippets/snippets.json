@@ -1,0 +1,101 @@
+{
+	"React Function Component": {
+		"prefix": "rfc",
+		"body": [
+			"interface Props {}",
+			"",
+			"export const ${TM_FILENAME_BASE} = ({}: Props) => {",
+			"    return (",
+			"        <div>${TM_FILENAME_BASE}</div>;",
+			"    )",
+			"};"
+		],
+		"description": "Create a React Arrow Function Component"
+	},
+	"Emotion Component": {
+		"prefix": "rec",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"",
+			"interface Props {}",
+			"",
+			"export const ${TM_FILENAME_BASE} = ({}: Props) => {",
+			"  return <Container>${TM_FILENAME_BASE}</Container>;",
+			"};",
+			"",
+			"const Container = styled.div``;",
+			""
+		],
+		"description": "Create a React Emotion Component"
+	},
+	"React Hooks Component": {
+		"prefix": "rhc",
+		"body": [
+			"interface $1Props = {}",
+			"",
+			"export const use$1 = ({}: $1Props) => {",
+			"    return {};",
+			"};"
+		],
+		"description": "Create a React Hooks Component."
+	},
+	"React Hook Testing": {
+		"prefix": "test-hook",
+		"body": [
+			"import { renderHook } from '@testing-library/react'",
+			"import { ${TM_FILENAME_BASE} from './${TM_FILENAME_BASE}';",
+			"",
+			"const $2Spy = jest.spyOn(,);",
+			"",
+			"describe('${TM_FILENAME_BASE}',() => {",
+			"   it('test name', () => {",
+			"      const { rerender } = renderHook(($4) => ${TM_FILENAME_BASE}($4));",
+			"      expect($2Spy).to$3();",
+			"})"
+		],
+		"description": "Create a React Hook Testing code."
+	},
+	"Storybook": {
+		"prefix": "story",
+		"body": [
+			"import { Meta, Story } from '@storybook/react'",
+			"import { ComponentProps } from 'react';",
+			"import { ${TM_FILENAME_BASE/(.stories)//} } from './${TM_FILENAME_BASE/(.stories)//}';",
+			"",
+			"type Props = ComponentProps<typeof ${TM_FILENAME_BASE/(.stories)//}>;",
+			"",
+			"const Template: Story<Props> = (args) => <${TM_FILENAME_BASE/(.stories)//} {...args} />;",
+			"",
+			"export const Default = Template.bind({});",
+			"",
+			"Default.args = {};",
+			"",
+			"export default {",
+			"title: '${RELATIVE_FILEPATH/(.stories.tsx)//g}',",
+			"component: ${TM_FILENAME_BASE/(.stories)//},",
+			"} as Meta;"
+		],
+		"description": "Create a Storybook for component."
+	},
+	"Zustand Store": {
+		"scope": "typescript",
+		"prefix": "zustand",
+		"body": [
+			"import create from 'zustand';",
+			"",
+			"interface State {",
+			"  value: string;",
+			"}",
+			"",
+			"const initialState: State = {",
+			"  value: '',",
+			"};",
+			"",
+			"export const use$1Store = create<State>((set) => ({",
+			"  ...initialState,",
+			"}));",
+			""
+		],
+		"description": "Create a Zustand Store"
+	}
+}

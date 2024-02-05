@@ -1,0 +1,45 @@
+{
+	"name": "react-snippets-marco",
+	"version": "0.0.1",
+	"description": "Code snippets for React with typescript, emotion, storybook, and testing-library",
+	"displayName": "react-snippets-marco",
+	"publisher": "Marco",
+	"icon": "images/logo.png",
+	"galleryBanner": {
+		"theme": "light"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wonsss/vscode-snippets-extension.git"
+	},
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"react",
+		"vscode",
+		"typescript",
+		"vscode-extension"
+	],
+	"author": "infeng",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/wonsss/vscode-snippets-extension/issues"
+	},
+	"homepage": "https://github.com/wonsss/vscode-snippets-extension#readme",
+	"contributes": {
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	}
+}
