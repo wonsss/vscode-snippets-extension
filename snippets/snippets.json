@@ -40,7 +40,7 @@
 		"description": "Create a React Hooks Component."
 	},
 	"Create React Hook Testing Code": {
-		"prefix": "th",
+		"prefix": "testh",
 		"body": [
 			"import { renderHook } from '@testing-library/react'",
 			"import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}';",
@@ -55,6 +55,72 @@
 			"})"
 		],
 		"description": "Create a React Hook Testing code."
+	},
+	"Create state testing block": {
+		"prefix": "testsb",
+		"body": [
+			"it('$1 must have been called with updated state when firing $2 event', () => {",
+			"const $1Spy = jest.spyOn(window, '$1').mockImplementation()",
+			"",
+			"    fireEvent.$2(target) // or userEvent",
+			"",
+			"expect($1Spy).toHaveBeenCalledTimes(1)",
+			"expect($1Spy).toHaveBeenCalledWith(updated)",
+			"})"
+		],
+		"description": "Create state testing block."
+	},
+	"Create React Fetch Component Testing Code": {
+		"prefix": "testfc",
+		"body": [
+			"import { fireEvent, render, screen } from '@testing-library/react';",
+			"import { rest } from 'msw';",
+			"import { setupServer } from 'msw/node';",
+			"",
+			"import { ${TM_FILENAME_BASE/(.test)//} } from './${TM_FILENAME_BASE/(.test)//}';",
+			"",
+			"const MOCK_RESPONSE = {$3}",
+			"",
+			"const server = setupServer(",
+			"  rest.get('/$2', (req, res, ctx) => {",
+			"    return res(ctx.json({ ...MOCK_RESPONSE }))",
+			"  }),",
+			")",
+			"",
+			"beforeAll(() => server.listen())",
+			"afterEach(() => server.resetHandlers())",
+			"afterAll(() => server.close())",
+			"beforeEach(() => {",
+			"  render(<${TM_FILENAME_BASE/(.test)//} />)",
+			"})",
+			"",
+			"describe('Test ${TM_FILENAME_BASE/(.test)//} Component', () => {",
+			"  it('should render default UI before firing event', async () => {",
+			"    const defaultText = screen.getByText()",
+			"    expect(defaultText).toBeInTheDocument()",
+			"  })",
+			"",
+			"  it('should render expected UI when firing event and fetching successfully', async () => {",
+			"    const target = screen.getByText()",
+			"    fireEvent.click(target)",
+			"",
+			"    const data = await screen.findByText()",
+			"    expect(data).toBeInTheDocument()",
+			"  })",
+			"",
+			"  it('should render error UI when fetching error', async () => {",
+			"    server.use(",
+			"      rest.get('/', (req, res, ctx) => {",
+			"        return res(ctx.status(404))",
+			"      }),",
+			"    )",
+			"",
+			"    const error = await screen.findByText();",
+			"    expect(error).toBeInTheDocument()",
+			"  })",
+			"})"
+		],
+		"description": "Create React Fetch Component Testing Code."
 	},
 	"Create Storybook": {
 		"prefix": "story",

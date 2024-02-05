@@ -18,9 +18,14 @@ Below is a list of all available snippets and the triggers of each one. The **â‡
 |        `rfcâ†’` | `Create a React Arrow Function Component.` |
 |       `rec->` | `Create a React Emotion Component.`        |
 |       `rhc->` | `Create a React Hooks Component.`          |
-| `test-hook->` | `Create a Testing code for React Hook.`    |
 |     `story->` | `Create a Storybook for component.`        |
 |   `zustand->` | `Create a Zustand Store.`                  |
+| `testh->` | `Create a Testing code for React Hook.`    |
+| `testfc->` | `Create a React Fetch Component Testing Code`    |
+| `testsb->` | `Create a State Testing Block.`    |
+
+
+
 
 ## Publishing
 
