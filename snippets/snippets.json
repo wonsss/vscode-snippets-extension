@@ -1,18 +1,18 @@
 {
-	"React Function Component": {
+	"Create React Function Component": {
 		"prefix": "rfc",
 		"body": [
 			"interface Props {}",
 			"",
 			"export const ${TM_FILENAME_BASE} = ({}: Props) => {",
 			"    return (",
-			"        <div>${TM_FILENAME_BASE}</div>;",
+			"        <div>${TM_FILENAME_BASE}</div>",
 			"    )",
 			"};"
 		],
 		"description": "Create a React Arrow Function Component"
 	},
-	"Emotion Component": {
+	"Create Emotion Component": {
 		"prefix": "rec",
 		"body": [
 			"import styled from '@emotion/styled';",
@@ -28,7 +28,7 @@
 		],
 		"description": "Create a React Emotion Component"
 	},
-	"React Hooks Component": {
+	"Create React Hooks Component": {
 		"prefix": "rhc",
 		"body": [
 			"interface $1Props {}",
@@ -39,24 +39,24 @@
 		],
 		"description": "Create a React Hooks Component."
 	},
-	"React Hook Testing": {
-		"prefix": "test-hook",
+	"Create React Hook Testing Code": {
+		"prefix": "th",
 		"body": [
 			"import { renderHook } from '@testing-library/react'",
 			"import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}';",
 			"",
-			"const $2Spy = jest.spyOn();",
+			"const $2Spy = jest.spyOn($2, $3);",
 			"",
 			"describe('${TM_FILENAME_BASE}',() => {",
 			"   it('test name', () => {",
-			"      const { rerender } = renderHook(($4) => ${TM_FILENAME_BASE}($4));",
-			"      expect($2Spy).to$3();",
+			"      const { rerender } = renderHook(() => ${TM_FILENAME_BASE}());",
+			"      expect($2Spy).to$4();",
 			"   })",
 			"})"
 		],
 		"description": "Create a React Hook Testing code."
 	},
-	"Storybook": {
+	"Create Storybook": {
 		"prefix": "story",
 		"body": [
 			"import { Meta, Story } from '@storybook/react'",
@@ -78,7 +78,7 @@
 		],
 		"description": "Create a Storybook for component."
 	},
-	"Zustand Store": {
+	"Create Zustand Store": {
 		"scope": "typescript",
 		"prefix": "zustand",
 		"body": [

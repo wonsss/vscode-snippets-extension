@@ -1,6 +1,6 @@
 {
 	"name": "react-snippets-marco",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Code snippets for React with typescript, emotion, storybook, and testing-library",
 	"displayName": "react-snippets-marco",
 	"publisher": "MarcoJang",
