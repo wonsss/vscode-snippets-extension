@@ -31,7 +31,7 @@
 	"React Hooks Component": {
 		"prefix": "rhc",
 		"body": [
-			"interface $1Props = {}",
+			"interface $1Props {}",
 			"",
 			"export const use$1 = ({}: $1Props) => {",
 			"    return {};",
@@ -43,14 +43,15 @@
 		"prefix": "test-hook",
 		"body": [
 			"import { renderHook } from '@testing-library/react'",
-			"import { ${TM_FILENAME_BASE} from './${TM_FILENAME_BASE}';",
+			"import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}';",
 			"",
-			"const $2Spy = jest.spyOn(,);",
+			"const $2Spy = jest.spyOn();",
 			"",
 			"describe('${TM_FILENAME_BASE}',() => {",
 			"   it('test name', () => {",
 			"      const { rerender } = renderHook(($4) => ${TM_FILENAME_BASE}($4));",
 			"      expect($2Spy).to$3();",
+			"   })",
 			"})"
 		],
 		"description": "Create a React Hook Testing code."
